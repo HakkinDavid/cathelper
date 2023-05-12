@@ -10,10 +10,11 @@
         div: "text-center gap-1 bg-amber-500 rounded-lg mb-2 flex flex-wrap p-2"
     };
 
-    $: if (problem.mass < 0 || typeof problem.mass !== 'number') problem.mass = 0;
-    $: if (problem.P.length < 0 || typeof problem.P.length !== 'number') problem.P.length = 0;
-    $: if (problem.P.angle < 0 || typeof problem.P.angle !== 'number') problem.P.angle = 0;
-    $: if (problem.cable.angle.magnitude < 0 || typeof problem.cable.angle.magnitude !== 'number') problem.cable.angle.magnitude = 0;
+    $: if (problem.mass < 0 || typeof problem.mass !== 'number') problem.mass = '';
+    $: if (problem.P.length < 0 || typeof problem.P.length !== 'number') problem.P.length = '';
+    $: if (problem.P.angle < 0 || typeof problem.P.angle !== 'number') problem.P.angle = '';
+    $: if (problem.cable.ctension < 0 || typeof problem.cable.ctension !== 'number') problem.cable.ctension = '';
+    $: if (problem.cable.angle.magnitude < 0 || typeof problem.cable.angle.magnitude !== 'number') problem.cable.angle.magnitude = '';
 
     $: problem.calcWeight();
     $: problem.calcP();

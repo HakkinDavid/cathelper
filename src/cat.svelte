@@ -23,14 +23,14 @@
     };
 
     class Problem {
-        mass = 0.00;
+        mass = 0;
         P = {
             length: 0,
             angle: 0,
             x: 0, y: 0
         };
-        Wvector = 0.00;
-        Momentum = 0.00;        
+        Wvector = 0;
+        Momentum = 0;        
         cable = {
             tension: 0,
             ctension: 0,
