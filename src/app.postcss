@@ -1,0 +1,43 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+#app {
+    margin: 0;
+}
+
+input {
+    outline: none;
+    background-color: rgba(0,0,0,0);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+@tailwind components;
+
+@tailwind utilities;
