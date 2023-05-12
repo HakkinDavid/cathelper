@@ -2,6 +2,7 @@
     import { fade } from 'svelte/transition';
     import { cat, Problem } from './cat.svelte';
     import Crane from './Crane.svelte';
+    import About from './About.svelte';
 
     let splash = {
         done: false,
@@ -22,6 +23,7 @@
     let menu = {
         active: false,
         button: cat.logo.worktime,
+        selected: 0,
         main: () => {
             menu.button = cat.logo.pinch;
             cat.log("🐱👈", "App.svelte");
@@ -36,14 +38,23 @@
                 action: () => {
                     cat.log("Reiniciando ...");
                     problem = new Problem;
+                    menu.selected = 0;
                     menu.active = false;
                     splash.show();
                 }
             },
             {
+                name: "Grúa",
+                action: () => {
+                    menu.selected = 0;
+                    menu.active = false;
+                }
+            },
+            {
                 name: "Acerca de",
                 action: () => {
-
+                    menu.selected = 1;
+                    menu.active = false;
                 }
             }
         ]
@@ -72,7 +83,11 @@
                 {/each}
             </div>
         {/if}
-        <Crane bind:problem bind:menu bind:splash/>
+        {#if menu.selected == 0}
+            <Crane bind:problem bind:menu bind:splash/>
+        {:else if menu.selected == 1}
+            <About/>
+        {/if}
     {:else}
         <div
             class="flex
