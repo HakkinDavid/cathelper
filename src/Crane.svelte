@@ -6,7 +6,7 @@
     export let splash;
     let input = {
         header: "font-bold font-['Oswald'] w-full",
-        self: "text-right w-10/12 bg-amber-200 rounded-lg px-2",
+        self: "text-right w-3/4 bg-amber-200 rounded-lg px-2",
         div: "text-center gap-1 bg-amber-500 rounded-lg mb-2 flex flex-wrap p-2"
     };
 
@@ -28,7 +28,7 @@
     <div class="flex flex-row justify-between items-center place-content-center flex-wrap">
         <div class="w-1/3 flex flex-col">
             <div class={input.div}>
-                <p class={input.header}>Masa</p>
+                <p class={input.header}>Masa a levantar</p>
                 <input class={input.self} type="number" bind:value={problem.mass} min=0>kg
             </div>
             <div class={input.div}>
@@ -38,9 +38,10 @@
             </div>
             <div class={input.div}>
                 <p class={input.header}>Cable</p>
-                <input class={input.self} type="number" bind:value={problem.counterMass} min=0>kg
                 <input class={input.self} type="number" bind:value={problem.cable.angle.magnitude} min=0>°
                 <div class="flex w-full flex-col justify-items-end"><p class={input.header}>Respecto al brazo</p><input type="checkbox" class="w-8 h-8 mx-auto" bind:checked={problem.cable.angle.betweenP} min=0></div>
+                <p class={input.header}>Contrapeso actual</p>
+                <input class={input.self} type="number" bind:value={problem.counterMass} min=0>kg
             </div>        
         </div>
 
