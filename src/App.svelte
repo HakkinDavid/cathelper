@@ -65,7 +65,7 @@
     splash.show();
 </script>
 
-<div class="flex w-screen h-screen bg-amber-600 overflow-x-hidden overflow-y-auto font-['Helvetica'] pt-24">
+<div class="flex w-screen h-screen bg-amber-600 overflow-x-hidden overscroll-none overflow-y-auto font-['Helvetica'] pt-24">
     {#if splash.done}
         <nav class="flex w-screen h-24 bg-amber-900 shadow-lg absolute top-0 items-center gap-2 px-4 z-50">
             <!-- svelte-ignore a11y-missing-attribute -->
