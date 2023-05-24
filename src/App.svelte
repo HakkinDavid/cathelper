@@ -69,6 +69,7 @@
     {#if splash.done}
         <nav class="flex w-screen h-24 bg-amber-900 shadow-lg absolute top-0 items-center gap-2 px-4 z-50">
             <!-- svelte-ignore a11y-missing-attribute -->
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
             <img src={menu.button} class="absolute h-16 cursor-pointer" on:click={menu.main}/>
             <p class="w-full text-center font-['Oswald'] text-4xl text-white">
                 {cat.title}

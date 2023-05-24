@@ -40,6 +40,9 @@
             }
         };
 
+        counterW = 0;
+        counterMass = 0;
+
         calcWeight () {
             this.Wvector = ((-1)*(this.mass * 9.81));
         };
@@ -59,15 +62,47 @@
                     *
                     Math.sin((
                         this.cable.angle.betweenP ?
-                        this.cable.angle.magnitude
+                            this.cable.angle.magnitude
                         :
+                            (
+                                180-(
+                                    (180-this.P.angle) + this.cable.angle.magnitude
+                                )
+                            )
+                    )*(Math.PI/180))
+                );
+        };
+        calcCTension () {
+            this.cable.ctension =
+            (this.counterMass * 9.81)
+            /
+            Math.sin((
+                !this.cable.angle.betweenP ?
+                    this.cable.angle.magnitude
+                :
+                    (
+                        180-(
+                            (180-this.P.angle) + this.cable.angle.magnitude
+                        )
+                    )
+            )*(Math.PI/180));
+        };
+        calcCounterW () {
+            this.counterW =
+                (this.cable.tension
+                *
+                Math.sin((
+                    !this.cable.angle.betweenP ?
+                        this.cable.angle.magnitude
+                    :
                         (
                             180-(
                                 (180-this.P.angle) + this.cable.angle.magnitude
                             )
                         )
-                    )*(Math.PI/180))
-                );
+                )*(Math.PI/180)))
+                /
+                9.81;
         };
     };
 
