@@ -32,12 +32,13 @@
                 <input class={input.self} type="number" bind:value={problem.mass} min=0>kg
             </div>
             <div class={input.div}>
-                <p class={input.header}>Brazo</p>
+                <p class={input.header}>Longitud del brazo</p>
                 <input class={input.self} type="number" bind:value={problem.P.length} min=0>m
+                <p class={input.header}>Inclinación del brazo</p>
                 <input class={input.self} type="number" bind:value={problem.P.angle} min=0>°
             </div>
             <div class={input.div}>
-                <p class={input.header}>Cable</p>
+                <p class={input.header}>Inclinación del cable</p>
                 <input class={input.self} type="number" bind:value={problem.cable.angle.magnitude} min=0>°
                 <div class="flex w-full flex-col justify-items-end"><p class={input.header}>Respecto al brazo</p><input type="checkbox" class="w-8 h-8 mx-auto" bind:checked={problem.cable.angle.betweenP} min=0></div>
                 <p class={input.header}>Contrapeso actual</p>
